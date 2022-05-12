@@ -1,12 +1,44 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+    /* at 62.5%, 1rem=10px */
+    font-size: 62.5%;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  header h1, 
+  header p {
+      text-align: center;
+      padding-top: 1.5rem; 
+  }
+  
+  header p {
+      padding-bottom: 1.5rem;
+  }
+
 .colour {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: #FF0000;
+    background-color: #FBF5F3;
     width: 100%;
     height: 200px;
+}
+
+.colour_1 {
+    background-color: #E28413;
+}
+
+.colour_2 {
+    background-color: #000022;
 }
 
 .colour button {
@@ -14,4 +46,10 @@
     border: none;
     border-radius: 20px;
     padding: 5px;
+    font-size: 1rem;
+    margin-top: 1rem
+}
+
+.colour p {
+    font-size: 1.7rem;
 }
