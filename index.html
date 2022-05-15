@@ -6,38 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Link to stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon Icon next to title -->
+    <link rel="icon" href="images/colour_wheel.png" />
+
+    <!-- Link to Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Colour Palette Picker</title>
   </head>
   <body>
     <header>
-      <h1>Colour Palette Picker</h1>
-      <p>Choose a colour scheme for your next website</p>
+      <div class="header_container">
+        <h1>Colour Palette Picker</h1>
+        <img src="images/colour_logo.png" alt="" />
+      </div>
+      <h2>Choose a colour scheme for your next website</h2>
+      <div><hr /></div>
+      <p>Press the spacebar to generate colour palettes!</p>
     </header>
 
     <main>
-      <!-- Colour Picker 1  -->
       <div class="colour_container">
+        <!-- Colour Picker 1  -->
         <div id="colour" class="colour">
-          <p id="hex_colour">#FBF5F3</p>
-          <button class="button">Pick a Colour</button>
+          <p id="hex_colour" class="hex_colour">#FBF5F3</p>
+          <button class="button">Change Colour</button>
         </div>
-      </div>
 
-      <!-- Colour Picker 2  -->
-      <div class="colour_container">
+        <!-- Colour Picker 2  -->
         <div id="colour_1" class="colour colour_1">
-          <p id="hex_colour">#E28413</p>
-          <button class="button">Pick a Colour</button>
+          <p id="hex_colour_1" class="hex_colour">#E28413</p>
+          <button class="button">Change Colour</button>
+        </div>
+
+        <!-- Colour Picker 3  -->
+        <div id="colour_2" class="colour colour_2">
+          <p id="hex_colour_2" class="hex_colour">#000022</p>
+          <button class="button">Change Colour</button>
         </div>
       </div>
 
-      <!-- Colour Picker 3  -->
-      <div class="colour_container">
-        <div id="colour_2" class="colour colour_2">
-          <p id="hex_colour">#000022</p>
-          <button class="button">Pick a Colour</button>
-        </div>
-      </div>
+      <footer>
+        <button id="generate" class="generate">Generate</button>
+      </footer>
     </main>
 
     <!-- Link to JS -->

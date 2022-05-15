@@ -1,5 +1,5 @@
 html {
-    height: 100%;
+
     box-sizing: border-box;
     /* at 62.5%, 1rem=10px */
     font-size: 62.5%;
@@ -12,25 +12,70 @@ html {
     padding: 0;
   }
 
+  body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #f9f8f5;
+ }
+ .header_container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+ }
+
+ .header_container img {
+     padding-left: 1rem;
+     padding-top: 1rem;
+     height: 3rem;
+     
+ }
+
   header h1, 
-  header p {
-      text-align: center;
+  header h2 {
       padding-top: 1.5rem; 
+      padding-left: 1rem;
   }
   
-  header p {
+  header h2 {
       padding-bottom: 1.5rem;
+      font-weight: 400;
   }
+
+  header p {
+    padding-left: 1rem;
+    color: gray;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; 
+  }
+
+   /*Removes header p-tag for desktop layout*/
+@media (max-width: 750px) {
+    header p,
+    header hr {
+      display: none;
+    }
+}
+
+   /*Displays colours vertically desktop layout*/
+   @media (min-width: 750px) {
+    .colour_container {
+        display: flex;
+    }
+}
 
 .colour {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
     background-color: #FBF5F3;
-    width: 100%;
     height: 200px;
+    width: 100vw;
+}
+/*height of colour container desktop layout*/
+@media (min-width: 750px) {
+    .colour {
+       height: 500px;
+    }
 }
 
 .colour_1 {
@@ -41,7 +86,15 @@ html {
     background-color: #000022;
 }
 
-.colour button {
+.hex_colour {
+    font-weight: 700;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.button {
+    display: none; /*Removes Change colour button*/
     cursor: pointer;
     border: none;
     border-radius: 20px;
@@ -52,4 +105,25 @@ html {
 
 .colour p {
     font-size: 1.7rem;
+}
+
+.generate  {
+width: 100%;
+position: fixed;
+bottom: 0;
+padding: 1rem;
+background-color: #f9f8f5;
+cursor: pointer;
+border: none;
+}
+
+.generate:hover {
+    font-weight: 700;
+}
+
+ /*Removes generate button - Desktop layout*/
+@media (min-width: 750px) {
+    .generate {
+      display: none;
+    }
 }
