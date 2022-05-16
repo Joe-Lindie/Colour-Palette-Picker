@@ -1,47 +1,67 @@
 // COLOUR SELECTOR
-
-const pickColourBtns = document.getElementsByClassName("button")
+const changeColourBtns = document.getElementsByClassName("button")
 const generateBtnMobile = document.getElementById("generate")
-const backgroundColour = document.getElementById("colour")
-const backgroundColour_1 = document.getElementById("colour_1")
-const backgroundColour_2 = document.getElementById("colour_2")
-
-const newHexCode = document.getElementById("hex_colour")
-const newHexCode_1 = document.getElementById("hex_colour_1")
-const newHexCode_2 = document.getElementById("hex_colour_2")
-
-// Click Eventlistener For Each Colour
-for (let i = 0; i < pickColourBtns.length; i++) {
-  pickColourBtns[i].addEventListener("click", getNewColour)
-}
-
-// Click Eventlistener For Spacebar
-document.addEventListener("keyup", (event) => {
-  if (event.code === "Space") {
-    getNewColour()
-  }
-})
-
-// Click Eventlistener For Mobile Layout
-generateBtnMobile.addEventListener("click", getNewColour)
+const backgroundColours = document.getElementsByClassName("colour")
+const newHexCode = document.getElementsByClassName("hex_colour")
 
 //Generate New Colour Function
-function getNewColour() {
-  const hexCode = "0123456789ABCDEF"
-  let colour = "#"
-  let colour_1 = "#"
-  let colour_2 = "#"
+function getNewColours() {
+  let hexCode = "0123456789ABCDEF"
+  let hexColourCode = "#"
 
   for (let i = 0; i < 6; i++) {
-    colour = colour + hexCode[Math.floor(Math.random() * 16)]
-    colour_1 = colour_1 + hexCode[Math.floor(Math.random() * 16)]
-    colour_2 = colour_2 + hexCode[Math.floor(Math.random() * 16)]
+    hexColourCode += hexCode[Math.floor(Math.random() * 16)]
   }
-
-  backgroundColour.style.background = colour
-  backgroundColour_1.style.background = colour_1
-  backgroundColour_2.style.background = colour_2
-  newHexCode.innerText = colour
-  newHexCode_1.innerText = colour_1
-  newHexCode_2.innerText = colour_2
+  return hexColourCode
 }
+
+//Loop For Hex Codes/Background Colours
+for (let i = 0; i < backgroundColours.length; i++) {}
+for (let i = 0; i < newHexCode.length; i++) {}
+
+//Change ALL colours Function
+function changeAllColours() {
+  let hexcode_0 = (backgroundColours[0].style.background = getNewColours())
+  newHexCode[0].innerHTML = hexcode_0
+  let hexcode_1 = (backgroundColours[1].style.background = getNewColours())
+  newHexCode[1].innerHTML = hexcode_1
+  let hexcode_2 = (backgroundColours[2].style.background = getNewColours())
+  newHexCode[2].innerHTML = hexcode_2
+}
+
+//Change individual colours-1 Function
+function changeIndividualColours_1() {
+  let hexcode_0 = (backgroundColours[0].style.background = getNewColours())
+  newHexCode[0].innerHTML = hexcode_0
+}
+
+//Change individual colours-2 Function
+function changeIndividualColours_2() {
+  let hexcode_1 = (backgroundColours[1].style.background = getNewColours())
+  newHexCode[1].innerHTML = hexcode_1
+}
+
+//Change individual colours-3 Function
+function changeIndividualColours_3() {
+  let hexcode_2 = (backgroundColours[2].style.background = getNewColours())
+  newHexCode[2].innerHTML = hexcode_2
+}
+
+// Click Eventlistener For Each 'Change Colour' Button
+for (let i = 0; i < changeColourBtns.length; i++) {
+  changeColourBtns[0].addEventListener("click", changeIndividualColours_1)
+  changeColourBtns[1].addEventListener("click", changeIndividualColours_2)
+  changeColourBtns[2].addEventListener("click", changeIndividualColours_3)
+}
+
+// Click Eventlistener For Mobile Layout (Generate Button)
+generateBtnMobile.addEventListener("click", function () {
+  changeAllColours()
+})
+
+// Click Eventlistener Desktop Layout (Push Spacebar)
+document.addEventListener("keyup", (event) => {
+  if (event.code === "Space") {
+    changeAllColours()
+  }
+})

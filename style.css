@@ -65,6 +65,7 @@ html {
 
 .colour {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #FBF5F3;
@@ -94,13 +95,16 @@ html {
 }
 
 .button {
-    display: none; /*Removes Change colour button*/
     cursor: pointer;
     border: none;
-    border-radius: 20px;
+    border-radius: 1rem;
     padding: 5px;
     font-size: 1rem;
     margin-top: 1rem
+}
+
+button:hover {
+    font-weight: 700;
 }
 
 .colour p {
@@ -112,9 +116,10 @@ width: 100%;
 position: fixed;
 bottom: 0;
 padding: 1rem;
-background-color: #f9f8f5;
+background-color: #efeeeb;
 cursor: pointer;
 border: none;
+border: 0.5px solid black;
 }
 
 .generate:hover {
