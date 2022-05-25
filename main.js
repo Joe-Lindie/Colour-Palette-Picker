@@ -1,11 +1,11 @@
 // COLOUR SELECTOR
 const changeColourBtns = document.getElementsByClassName("button")
 const generateBtnMobile = document.getElementById("generate")
-const backgroundColours = document.getElementsByClassName("colour")
+const backgroundColours = document.querySelectorAll(".colour")
 const newHexCode = document.getElementsByClassName("hex_colour")
 
 //Generate New Colour Function
-function getNewColours() {
+function getNewColour() {
   let hexCode = "0123456789ABCDEF"
   let hexColourCode = "#"
 
@@ -14,45 +14,27 @@ function getNewColours() {
   }
   return hexColourCode
 }
-
-//Loop For Hex Codes/Background Colours
-for (let i = 0; i < backgroundColours.length; i++) {}
-for (let i = 0; i < newHexCode.length; i++) {}
+//////////////////////////////////
 
 //Change ALL colours Function
 function changeAllColours() {
-  let hexcode_0 = (backgroundColours[0].style.background = getNewColours())
-  newHexCode[0].innerHTML = hexcode_0
-  let hexcode_1 = (backgroundColours[1].style.background = getNewColours())
-  newHexCode[1].innerHTML = hexcode_1
-  let hexcode_2 = (backgroundColours[2].style.background = getNewColours())
-  newHexCode[2].innerHTML = hexcode_2
+  backgroundColours.forEach((container) => {
+    let newColour = getNewColour()
+    container.style.backgroundColor = newColour
+    container.querySelector(".hex_colour").innerHTML = newColour
+  })
 }
 
-//Change individual colours-1 Function
-function changeIndividualColours_1() {
-  let hexcode_0 = (backgroundColours[0].style.background = getNewColours())
-  newHexCode[0].innerHTML = hexcode_0
-}
-
-//Change individual colours-2 Function
-function changeIndividualColours_2() {
-  let hexcode_1 = (backgroundColours[1].style.background = getNewColours())
-  newHexCode[1].innerHTML = hexcode_1
-}
-
-//Change individual colours-3 Function
-function changeIndividualColours_3() {
-  let hexcode_2 = (backgroundColours[2].style.background = getNewColours())
-  newHexCode[2].innerHTML = hexcode_2
-}
-
-// Click Eventlistener For Each 'Change Colour' Button
-for (let i = 0; i < changeColourBtns.length; i++) {
-  changeColourBtns[0].addEventListener("click", changeIndividualColours_1)
-  changeColourBtns[1].addEventListener("click", changeIndividualColours_2)
-  changeColourBtns[2].addEventListener("click", changeIndividualColours_3)
-}
+//Change INDIVIDUAL colours Function
+document.querySelectorAll(".button").forEach((button) => {
+  button.addEventListener("click", function () {
+    let newColour = getNewColour()
+    button.parentElement.style.backgroundColor = newColour
+    button.parentElement.querySelector(".hex_colour").innerHTML = newColour
+  })
+})
+// On load, generate colours
+changeAllColours()
 
 // Click Eventlistener For Mobile Layout (Generate Button)
 generateBtnMobile.addEventListener("click", function () {

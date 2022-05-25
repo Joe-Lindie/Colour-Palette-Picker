@@ -23,6 +23,19 @@ html {
 
  }
 
+ .space_between {
+     justify-content: space-between;
+ }
+
+ .space_between button {
+    cursor: pointer;
+    margin-right: 1rem;
+
+ }
+
+ .saved_colours_result {
+     font-size: 2rem;
+ }
  .header_container img {
      padding-left: 1rem;
      padding-top: 1rem;
