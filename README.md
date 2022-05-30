@@ -10,4 +10,8 @@ You can find the hosted website [here!](https://joe-lindie.github.io/Colour-Pale
 - Auto-generate multiple colours ✓
 - Allow users to change each colour ✓
 
-![Colour Palette Picker website](images/Palette_Picker_jpeg.png)
+### **Mobile Layout** 
+![Colour Palette Picker mobile layout](images/Mobile_Palette_Picker_jpeg.png)
+
+### **Desktop Layout** 
+![Colour Palette Picker desktop layout](images/Desktop_Palette_Picker_jpeg.png)
