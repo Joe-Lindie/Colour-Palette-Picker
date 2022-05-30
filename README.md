@@ -11,7 +11,7 @@ You can find the hosted website [here!](https://joe-lindie.github.io/Colour-Pale
 - Allow users to change each colour ✓
 
 ### **Mobile Layout** 
-![Colour Palette Picker mobile layout](images/Mobile_Palette_Picker_jpeg.png)
+<img src="images/Mobile_Palette_Picker_jpeg.png" alt="Colour Palette Picker mobile layout" height= "300" />
 
 ### **Desktop Layout** 
 ![Colour Palette Picker desktop layout](images/Desktop_Palette_Picker_jpeg.png)
